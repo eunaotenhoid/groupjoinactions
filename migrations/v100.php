@@ -4,7 +4,7 @@ namespace eunaumtenhoid\groupjoinactions\migrations;
 class v100 extends \phpbb\db\migration\migration
 {
 	/**
-	 * Verifica se as novas colunas já existem para evitar erros de re-instalação
+	 * Checks if new columns already exist to avoid re-installation errors
 	 */
 	public function effectively_installed()
 	{
@@ -12,7 +12,7 @@ class v100 extends \phpbb\db\migration\migration
 	}
 
 	/**
-	 * Define a versão mínima do phpBB necessária
+	 * Defines the minimum phpBB version required
 	 */
 	public static function depends_on()
 	{
@@ -20,7 +20,7 @@ class v100 extends \phpbb\db\migration\migration
 	}
 
 	/**
-	 * Adiciona as colunas padronizadas e os novos campos de PM
+	 * Adds standardized columns and new PM fields
 	 */
 	public function update_schema()
 	{
@@ -29,16 +29,16 @@ class v100 extends \phpbb\db\migration\migration
 				$this->table_prefix . 'groups' => [
 					'group_join_add_points'  => ['UINT', 0],
 					'group_join_add_invites' => ['UINT', 0],
-					'group_join_sender_id'   => ['UINT', 2], // Padrão ID 2 (Geralmente o Admin)
+					'group_join_sender_id'   => ['UINT', 2], // Default ID 2 (Usually the Admin)
 					'group_join_pm_subject'  => ['VCHAR:255', ''],
-					'group_join_pm_message'  => ['MTEXT_UNI', ''], // Suporta BBCodes e textos longos
+					'group_join_pm_message'  => ['MTEXT_UNI', ''], // Supports BBCodes and long texts
 				],
 			],
 		];
 	}
 
 	/**
-	 * Remove as colunas caso a extensão seja excluída via ACP
+	 * Removes columns if the extension is deleted via ACP
 	 */
 	public function revert_schema()
 	{

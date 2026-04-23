@@ -1,7 +1,13 @@
 <?php
 /**
- * @ignore
- */
+*
+* ActionGroup [English]
+*
+* @package language
+* @copyright (c) 2026 eunaumtenhoid
+* @license http://opensource.org/licenses/gpl-license.php GNU Public License
+*
+*/
 if (!defined('IN_PHPBB'))
 {
     exit;

@@ -4,7 +4,7 @@ namespace eunaumtenhoid\groupjoinactions\migrations;
 class v120 extends \phpbb\db\migration\migration
 {
 	/**
-	 * Verifica se a coluna já existe
+	 * Checks if column already exists
 	 */
 	public function effectively_installed()
 	{
@@ -12,7 +12,7 @@ class v120 extends \phpbb\db\migration\migration
 	}
 
 	/**
-	 * Depende da versão v110
+	 * Depends on version v110
 	 */
 	public static function depends_on()
 	{
@@ -20,7 +20,7 @@ class v120 extends \phpbb\db\migration\migration
 	}
 
 	/**
-	 * Adiciona a coluna para item de entrada no grupo
+	 * Adds column for group entry item
 	 */
 	public function update_schema()
 	{
@@ -34,7 +34,7 @@ class v120 extends \phpbb\db\migration\migration
 	}
 
 	/**
-	 * Remove a coluna caso a migração seja revertida
+	 * Removes column if migration is reverted
 	 */
 	public function revert_schema()
 	{

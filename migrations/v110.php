@@ -4,7 +4,7 @@ namespace eunaumtenhoid\groupjoinactions\migrations;
 class v110 extends \phpbb\db\migration\migration
 {
 	/**
-	 * Verifica se as colunas já existem
+	 * Checks if columns already exist
 	 */
 	public function effectively_installed()
 	{
@@ -14,7 +14,7 @@ class v110 extends \phpbb\db\migration\migration
 	}
 
 	/**
-	 * Depende da versão v100
+	 * Depends on version v100
 	 */
 	public static function depends_on()
 	{
@@ -22,7 +22,7 @@ class v110 extends \phpbb\db\migration\migration
 	}
 
 	/**
-	 * Adiciona as colunas para borda colorida, ícones e upload por grupo
+	 * Adds columns for colored border, icons and upload per group
 	 */
 	public function update_schema()
 	{
@@ -38,7 +38,7 @@ class v110 extends \phpbb\db\migration\migration
 	}
 
 	/**
-	 * Remove as colunas caso a migração seja revertida
+	 * Removes columns if migration is reverted
 	 */
 	public function revert_schema()
 	{

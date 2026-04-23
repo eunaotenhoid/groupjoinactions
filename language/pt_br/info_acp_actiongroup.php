@@ -22,7 +22,7 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACTION_GROUP_TITLE'        => 'Ações de Grupo (ActionGroup)', 
 	
-	// Nomes das colunas conforme solicitado: 'group add points' e 'group add invites'
+	// Column names as requested: 'group add points' and 'group add invites'
 	'ACTION_POINTS'             => 'group add points',
 	'ACTION_POINTS_EXPLAIN'     => 'Quantidade de pontos que o usuário receberá automaticamente ao entrar no grupo.',
 	'ACTION_INVITES'            => 'group add invites',
@@ -33,11 +33,11 @@ $lang = array_merge($lang, array(
 	'ACTION_ITEM_EXPLAIN'       => 'Item que o usuário receberá automaticamente ao entrar no grupo.',
 	'ACTION_ITEM_NONE'          => '-- Nenhum Item --',
 	
-	// Configuração do ID do Enviador
+	// Sender ID Configuration
 	'ACTION_SENDER'             => 'Remetente da MP',
 	'ACTION_SENDER_EXPLAIN'     => 'ID do usuário que aparecerá como remetente nos logs de pontos e como autor da Mensagem Privada (Geralmente o ID 2).',
 
-	// Configurações de Mensagem Privada (PM) no ACP
+	// Private Message (PM) Settings in ACP
 	'GROUP_JOIN_PM_SETTINGS'     => 'Configurações de Mensagem Privada',
 	'GROUP_JOIN_ACTION_SETTINGS' => 'Configurações de Bônus (Pontos/Convites)',
 	'ACTION_PM_SUBJECT'          => 'Assunto da PM',
@@ -52,17 +52,17 @@ $lang = array_merge($lang, array(
 	'LOG_ROW_UPLOAD'             => '<br />» Bônus de upload: %s GB',
 	'LOG_ROW_ITEM'               => '<br />» Item recebido: %s',
 
-	// Chave mestra para evitar chaves { } no log
+	// Master key to avoid braces { } in the log
 	'LOG_GROUP_JOIN_SUCCESS'     => '%s',
 
-	// Chaves antigas formatadas com o novo visual para o histórico
+	// Old keys formatted with the new look for history
 	'LOG_GROUP_JOIN_POINTS'      => '<strong>Benefícios adquiridos ao entrar no grupo %2$s</strong><br />» Pontos: %1$s',
 	'LOG_GROUP_JOIN_UPLOAD'      => '<strong>Benefícios adquiridos ao entrar no grupo %2$s</strong><br />» Bônus de upload: %1$s GB',
 
 	'LOG_APS_GROUP_JOIN_POINTS'  => 'Bônus de entrada no grupo %s',
 	'LOG_UPS_GROUP_JOIN_POINTS'  => 'Bônus de entrada no grupo %s',
 
-	// Configuração de borda nos posts
+	// Post border configuration
 	'ACTION_GROUP_POST_COLOR'			=> 'Ativar cor da borda nos posts',
 	'ACTION_GROUP_POST_COLOR_EXPLAIN'	=> 'Habilita a exibição de uma borda colorida nos posts dos membros deste grupo.',
 	'ACTION_GROUP_ICON'                 => 'Ícone do Grupo',

@@ -106,7 +106,7 @@ public function display_form($event)
     $group_row = $event['group_row'];
     $sender_id = isset($group_row['group_join_sender_id']) ? (int) $group_row['group_join_sender_id'] : 2;
     
-    // Busca o nome e a cor do usuário
+    // Fetch username and user color
     $sql = 'SELECT username, user_colour FROM ' . USERS_TABLE . ' WHERE user_id = ' . $sender_id;
     $result = $this->db->sql_query($sql);
     $row = $this->db->sql_fetchrow($result);
@@ -315,7 +315,7 @@ public function display_form($event)
 
 	protected function send_group_pm($user_id_ary, $group_id, $group_name, $sender_id, $group_data)
 {
-    // Se assunto ou mensagem estiverem vazios, não envia nada
+    // If subject or message is empty, do not send anything
     if (empty($group_data['group_join_pm_subject']) || empty($group_data['group_join_pm_message']))
     {
         return;
@@ -331,7 +331,7 @@ public function display_form($event)
 
     foreach ($user_id_ary as $user_id)
     {
-        // Busca nome do usuário
+        // Fetch username
         $sql = 'SELECT username FROM ' . USERS_TABLE . ' WHERE user_id = ' . (int) $user_id;
         $result = $this->db->sql_query($sql);
         $username = (string) $this->db->sql_fetchfield('username');
@@ -349,10 +349,10 @@ public function display_form($event)
         $final_subject = str_replace(array_keys($replace_vars), array_values($replace_vars), $subject_tpl);
         $final_message = str_replace(array_keys($replace_vars), array_values($replace_vars), $message_tpl);
 
-        // --- INÍCIO DO TRATAMENTO DE BBCODE ---
+        // --- START BBCODE PROCESSING ---
         $bbcode_uid = $bbcode_bitfield = $flags = '';
         generate_text_for_storage($final_message, $bbcode_uid, $bbcode_bitfield, $flags, true, true, true);
-        // --- FIM DO TRATAMENTO DE BBCODE ---
+        // --- END BBCODE PROCESSING ---
 
         $pm_data = array(
             'from_user_id'      => $sender_id,
@@ -363,8 +363,8 @@ public function display_form($event)
             'enable_smilies'    => true,
             'enable_urls'       => true,
             'icon_id'           => 0,
-            'bbcode_bitfield'   => $bbcode_bitfield, // Agora preenchido
-            'bbcode_uid'        => $bbcode_uid,      // Agora preenchido
+            'bbcode_bitfield'   => $bbcode_bitfield, // Now filled
+            'bbcode_uid'        => $bbcode_uid,      // Now filled
             'message'           => $final_message,
             'address_list'      => array('u' => array($user_id => 'to')),
         );
