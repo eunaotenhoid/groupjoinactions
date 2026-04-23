@@ -1,0 +1,74 @@
+	</fieldset>
+	<fieldset>
+	<legend>{{ lang('ACTION_GROUP_TITLE') }}</legend>
+
+	<dl>
+		<dt><label for="action_post_color">{{ lang('ACTION_GROUP_POST_COLOR') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ACTION_GROUP_POST_COLOR_EXPLAIN') }}</span></dt>
+		<dd><input type="checkbox" id="action_post_color" name="action_post_color" value="1"{% if ACTION_POST_COLOR %} checked="checked"{% endif %} /></dd>
+	</dl>
+	<dl>
+		<dt><label for="action_group_icon">{{ lang('ACTION_GROUP_ICON') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ACTION_GROUP_ICON_EXPLAIN') }}</span></dt>
+		<dd>
+			<select name="action_group_icon" id="action_group_icon" onchange="document.getElementById('group_icon_preview').src = '{{ GROUP_ICON_WEB_PATH }}' + this.value; if(this.value == '') document.getElementById('group_icon_preview').src = '';">
+				<option value="">---</option>
+				{{ S_ICON_OPTIONS }}
+			</select>
+			<div style="margin-top: 5px;">
+				<img id="group_icon_preview" src="{% if ACTION_GROUP_ICON %}{{ GROUP_ICON_WEB_PATH }}{{ ACTION_GROUP_ICON }}{% endif %}" alt="" style="max-height: 32px;" />
+			</div>
+		</dd>
+	</dl>
+
+{% if S_HAS_POINTS_EXT %}
+<dl>
+	<dt><label for="action_points">{{ lang('ACTION_POINTS') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ACTION_POINTS_EXPLAIN') }}</span></dt>
+	<dd><input type="number" id="action_points" name="action_points" value="{{ ACTION_POINTS }}" /></dd>
+</dl>
+{% endif %}
+
+{% if S_HAS_INVITE_EXT %}
+<dl>
+	<dt><label for="action_invites">{{ lang('ACTION_INVITES') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ACTION_INVITES_EXPLAIN') }}</span></dt>
+	<dd><input type="number" id="action_invites" name="action_invites" value="{{ ACTION_INVITES }}" /></dd>
+</dl>
+{% endif %}
+
+{% if S_HAS_XBT_EXT %}
+<dl>
+	<dt><label for="action_upload">{{ lang('ACTION_UPLOAD') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ACTION_UPLOAD_EXPLAIN') }}</span></dt>
+	<dd><input type="number" id="action_upload" name="action_upload" value="{{ ACTION_UPLOAD }}" /></dd>
+</dl>
+{% endif %}
+
+{% if S_HAS_SHOP_EXT %}
+<dl>
+	<dt><label for="action_item">{{ lang('ACTION_ITEM') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ACTION_ITEM_EXPLAIN') }}</span></dt>
+	<dd>
+		<select id="action_item" name="action_item">
+			<option value="0">{{ lang('ACTION_ITEM_NONE') }}</option>
+			{{ S_SHOP_ITEM_OPTIONS }}
+		</select>
+	</dd>
+</dl>
+{% endif %}
+
+<fieldset>
+	<legend>{{ lang('GROUP_JOIN_PM_SETTINGS') }}</legend>
+	<dl>
+		<dt><label for="action_sender">{{ lang('ACTION_SENDER') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ACTION_SENDER_EXPLAIN') }}</span></dt>
+		<dd>
+			<input type="number" id="action_sender" name="action_sender" size="6" value="{{ ACTION_SENDER }}" />
+			{% if ACTION_SENDER_NAME %}
+				[<a href="{{ U_ACTION_SENDER }}" style="font-weight: bold; {% if ACTION_SENDER_COL %}color: #{{ ACTION_SENDER_COL }};{% endif %}" target="_blank">{{ ACTION_SENDER_NAME }}</a>]
+			{% endif %}
+		</dd>
+	</dl>
+	<dl>
+		<dt><label for="action_pm_subject">{{ lang('ACTION_PM_SUBJECT') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ACTION_PM_SUBJECT_EXPLAIN') }}</span></dt>
+		<dd><input class="inputbox autowidth" type="text" name="action_pm_subject" id="action_pm_subject" size="64" maxlength="255" value="{{ ACTION_PM_SUBJECT }}" /></dd>
+	</dl>
+	<dl>
+		<dt><label for="action_pm_message">{{ lang('ACTION_PM_MESSAGE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ACTION_PM_MESSAGE_EXPLAIN') }}</span></dt>
+		<dd><textarea name="action_pm_message" id="action_pm_message" rows="5" cols="45">{{ ACTION_PM_MESSAGE }}</textarea></dd>
+	</dl>
+</fieldset>

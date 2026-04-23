@@ -1,0 +1,16 @@
+services:
+    eunaumtenhoid.groupjoinactions.listener:
+        class: eunaumtenhoid\groupjoinactions\event\listener
+        arguments:
+            - '@template'
+            - '@user'
+            - '@request'
+            - '@cache.driver'
+            - '@dbal.conn'
+            - '%core.table_prefix%'
+            - '@log'
+            - '@ext.manager'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        tags:
+            - { name: event.listener }

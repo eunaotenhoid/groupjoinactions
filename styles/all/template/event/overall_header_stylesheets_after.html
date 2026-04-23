@@ -1,0 +1,14 @@
+<style>
+{% for post in postrow %}
+	{% if post.S_GROUP_POST_COLOR %}
+		div#p{{ post.POST_ID }}.post {
+			border-left: 5px solid #{{ post.GROUP_POST_COLOR }} !important;
+			background: linear-gradient(90deg, rgba({{ post.GROUP_POST_COLOR_RGB }}, 0.08) 0%, rgba({{ post.GROUP_POST_COLOR_RGB }}, 0.01) 100%) !important;
+			transition: all 0.3s ease;
+		}
+		div#p{{ post.POST_ID }}.post:hover {
+			background: linear-gradient(90deg, rgba({{ post.GROUP_POST_COLOR_RGB }}, 0.12) 0%, rgba({{ post.GROUP_POST_COLOR_RGB }}, 0.02) 100%) !important;
+		}
+	{% endif %}
+{% endfor %}
+</style>
